@@ -1,11 +1,17 @@
 //global controls
-let s = 3; // scaling
-let sW = .5; // strokeWeight
-let xpd = 50; // x-axis left-padding
-let ypd = 60; //  y-axis top-padding
+
+let s = 3.5; // scaling
+let sW = s / 6; // strokeWeight scales with global scaling
+let xpd = 30; // x-axis left-padding
+let ypd = 0; //  y-axis top-padding
+
+let hue = 15; // sets the hue
+let hueRange = 10; // sets range of colours, per cent +/- of the hue
+let sat = 33; // sets saturation
+let bri = 66; // sets brightness
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH); // DEVELOP_GLYPH  GRID_WALLPAPER  GLIDE_WALLPAPER
+  pWallpaper.output_mode(GLIDE_WALLPAPER); // DEVELOP_GLYPH  GRID_WALLPAPER  GLIDE_WALLPAPER
   pWallpaper.resolution(FIT_TO_SCREEN); // FIT_TO_SCREEN NINE_LANDSCAPE NINE_PORTRAIT A4  A3
   pWallpaper.show_guide(false); // true false
   pWallpaper.grid_settings.cell_width = 200;
@@ -14,14 +20,15 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(150);
+  background(220);
 }
 
 function my_symbol() {
 
   //origami-crane glyph
 
-  fill(255);
+  colorMode(HSB, 100);
+  fill(random(hue - hueRange, hue + hueRange), sat, bri);
   stroke(0);
   strokeWeight(sW);
 
