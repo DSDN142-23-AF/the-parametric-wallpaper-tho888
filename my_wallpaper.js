@@ -5,14 +5,14 @@ let lp_a = 90; // left-padding
 let tp_a = 10; //  top-padding
 
 // ------------------------ background-shapes-controls ------------------------
-let shS = 12; // scale
-// var shO = 10; // shape opacity
+let shS = 12; // scaling
+let shW = shS / 2.5; // strokeWeight
 let lp_b = 10; // left-padding X glyph
 let tp_b = 0; //top-padding X glyph
 let lp_c = 135; // left-padding square glyph
 let tp_c = 130; //top-padding square glyph
-let lp_d = 35; // left-padding zigzag glyph
-let tp_d = 110; //top-padding zigzag glyph
+let lp_d = 4; // left-padding zigzag glyph
+let tp_d = 10; //top-padding zigzag glyph
 
 // ------------------------ global-controls ------------------------
 let bG = 24 // sets the background colour (0-255)
@@ -68,16 +68,16 @@ function my_symbol() {
   rect(lp_c, tp_c, shS * 2, shS * 2, shS / 2);
 
   stroke(hue, sat / 5, random(bri - 30, bri), shO);
-  strokeWeight(sW * 8);
+  strokeWeight(shW);
   strokeCap(ROUND);
   noFill();
 
   beginShape();
-  vertex(shS + lp_d, shS + tp_d);
-  vertex(shS + lp_d + 10, 10 + shS + tp_d);
-  vertex(shS + lp_d, 20 + shS + tp_d);
-  vertex(shS + lp_d + 10, 30 + shS + tp_d);
-  vertex(shS + lp_d, 40 + shS + tp_d);
+  vertex(shS * lp_d, shS * tp_d);
+  vertex(shS * lp_d + 10, 10 + shS * tp_d);
+  vertex(shS * lp_d, 20 + shS * tp_d);
+  vertex(shS * lp_d + 10, 30 + shS * tp_d);
+  vertex(shS * lp_d, 40 + shS * tp_d);
   endShape();
 
   // ------------------------ crane-glyph ------------------------
