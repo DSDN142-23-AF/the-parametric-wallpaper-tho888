@@ -1,30 +1,30 @@
 // ------------------------ crane-glyph-controls ------------------------
-let cS = 3; // scaling (ideal range: 2 - 4)
-let sW = cS / 5; // strokeWeight (ideal range: 4 - 10)
-let lp_a = 90; // left-padding
-let tp_a = 10; //  top-padding
-let cStroke = 0; // stroke colour (0-100)
+let cS = 2; // scaling (ideal range: 2 - 4)
+let sW = cS / 4; // strokeWeight (ideal range: 4 - 10)
+let lp_a = 60; // left-padding
+let tp_a = 0; //  top-padding
+let cStroke = 20; // stroke colour (0-100)
 
 // ------------------------ background-shapes-controls ------------------------
-let shS = 12; // scaling
+let shS = 6; // scaling
 let shW = shS / 2.5; // strokeWeight
-let lp_b = 10; // left-padding X glyph
-let tp_b = 0; //top-padding X glyph
-let lp_c = 135; // left-padding square glyph
-let tp_c = 130; //top-padding square glyph
-let lp_d = 4; // left-padding zigzag glyph
-let tp_d = 10; //top-padding zigzag glyph
+let lp_b = 160; // left-padding X glyph
+let tp_b = 5; //top-padding X glyph
+let lp_c = -10 // left-padding square glyph
+let tp_c = 120; //top-padding square glyph
+let lp_d = 30; // left-padding zigzag glyph
+let tp_d = 50; //top-padding zigzag glyph
 
 // ------------------------ global-controls ------------------------
-let bG = 24 // sets the background colour (0-255)
-let hue = 15; // sets the hue (0-100)
-let hueRange = 15; // sets range of colours, per cent +/- of the hue (0-100)
-let sat = 20; // sets saturation (0-100)
-let bri = 70; // sets brightness (0-100)
+let bG = 33; // sets the background colour (0-255)
+let hue = 77; // sets the hue (0-100)
+let hueRange = 14; // sets range of colours, per cent +/- of the hue (0-100)
+let sat = 21; // sets saturation (0-100)
+let bri = 60; // sets brightness (0-100)
 
 // ------------------------ wallpaper-setup ------------------------
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER); // DEVELOP_GLYPH  GRID_WALLPAPER  GLIDE_WALLPAPER
+  pWallpaper.output_mode(GLIDE_WALLPAPER); // DEVELOP_GLYPH  GRID_WALLPAPER  GLIDE_WALLPAPER
   pWallpaper.resolution(NINE_LANDSCAPE); // FIT_TO_SCREEN NINE_LANDSCAPE NINE_PORTRAIT A4  A3
   pWallpaper.show_guide(false); // true false
   pWallpaper.grid_settings.cell_width = 200;
@@ -39,7 +39,7 @@ function wallpaper_background() {
 if (bG < 41 || bG > 179) {
   var shO = 16;
 } else if (bG < 81 || bG > 159) {
-  var shO = 30;
+  var shO = 20;
 } else {
   var shO = 35;
 }
