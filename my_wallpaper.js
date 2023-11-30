@@ -1,8 +1,9 @@
 // ------------------------ crane-glyph-controls ------------------------
 let cS = 3; // scaling (ideal range: 2 - 4)
-let sW = cS / 7; // strokeWeight (ideal range: 4 - 10)
+let sW = cS / 5; // strokeWeight (ideal range: 4 - 10)
 let lp_a = 90; // left-padding
 let tp_a = 10; //  top-padding
+let cStroke = 0; // stroke colour (0-100)
 
 // ------------------------ background-shapes-controls ------------------------
 let shS = 12; // scaling
@@ -24,7 +25,7 @@ let bri = 70; // sets brightness (0-100)
 // ------------------------ wallpaper-setup ------------------------
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER); // DEVELOP_GLYPH  GRID_WALLPAPER  GLIDE_WALLPAPER
-  pWallpaper.resolution(FIT_TO_SCREEN); // FIT_TO_SCREEN NINE_LANDSCAPE NINE_PORTRAIT A4  A3
+  pWallpaper.resolution(NINE_LANDSCAPE); // FIT_TO_SCREEN NINE_LANDSCAPE NINE_PORTRAIT A4  A3
   pWallpaper.show_guide(false); // true false
   pWallpaper.grid_settings.cell_width = 200;
   pWallpaper.grid_settings.cell_height = 200;
@@ -82,7 +83,7 @@ function my_symbol() {
 
   // ------------------------ crane-glyph ------------------------
   fill(random(hue - hueRange, hue + hueRange), sat, bri);
-  stroke(0);
+  stroke(0, 0, cStroke);
   strokeWeight(sW);
 
   beginShape();
