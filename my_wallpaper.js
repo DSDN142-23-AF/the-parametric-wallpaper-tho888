@@ -7,23 +7,23 @@ let tp_a = 10; //  top-padding
 // ------------------------ background-shapes-controls ------------------------
 let shS = 12; // scale
 // var shO = 10; // shape opacity
-let lp_b = 0; // left-padding X glyph
+let lp_b = 10; // left-padding X glyph
 let tp_b = 0; //top-padding X glyph
-let lp_c = 150; // left-padding circle glyph
-let tp_c = 150; //top-padding circle glyph
-let lp_d = 25; // left-padding zigzag glyph
+let lp_c = 135; // left-padding square glyph
+let tp_c = 130; //top-padding square glyph
+let lp_d = 35; // left-padding zigzag glyph
 let tp_d = 110; //top-padding zigzag glyph
 
 // ------------------------ global-controls ------------------------
 let bG = 24 // sets the background colour (0-255)
-let hue = 75; // sets the hue (0-100)
+let hue = 15; // sets the hue (0-100)
 let hueRange = 15; // sets range of colours, per cent +/- of the hue (0-100)
-let sat = 35; // sets saturation (0-100)
+let sat = 20; // sets saturation (0-100)
 let bri = 70; // sets brightness (0-100)
 
 // ------------------------ wallpaper-setup ------------------------
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GLIDE_WALLPAPER); // DEVELOP_GLYPH  GRID_WALLPAPER  GLIDE_WALLPAPER
+  pWallpaper.output_mode(GRID_WALLPAPER); // DEVELOP_GLYPH  GRID_WALLPAPER  GLIDE_WALLPAPER
   pWallpaper.resolution(FIT_TO_SCREEN); // FIT_TO_SCREEN NINE_LANDSCAPE NINE_PORTRAIT A4  A3
   pWallpaper.show_guide(false); // true false
   pWallpaper.grid_settings.cell_width = 200;
